@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome Cdn Link -->
+    <script src="https://kit.fontawesome.com/676eaf38ajs" crossorigin="anonymous"></script>
+    <!-- JQuery Cdn Link -->
+    <script src="https://code.jquery.com/jquey-3.6.4.js"
+        integrity="sha256-a9BBRygx1B51t8GjxDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <!-- AOS Animation css Cdn Link -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <!-- Custom css Link -->
+    <link rel="stylesheet" href="./PROJECT.CSS">
+    <link rel="stylesheer" href="./prohect.js">
+        <title>Travel Blog</title>
+    <!-- <style>
+        /* Start */
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+/* Create own custom scrollbar */
+/* width */
+::-webkit-scrollbar{
+    width:8px;
+}
+/* Scrollbar Track */
+::-webkit-scrollbar-track{
+    background: #f0f0f0;
+}
+::-webkit-scrollbar-thumb{
+    background: #a8a8a8;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #9a9a9a;
+}
+        /* Defining the root */
+:root{
+    --bg-color:#e2e2e2;
+    --primary:#1c1c1c;
+    --secondary:#e24806;
+    --tertiary:#f4f4f4;
+    --fourth:#a7a7a7;
+    --linear-background:linear-gradient(45deg, rgba(0, 0, 0, 0.65),rgba(0, 0, 0, 0.65), rgba(0, 0,0, 0.54));
+    --linear-background-destination:linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.))
+}/* Global Btn styling */
+.btn{
+    height: 40px;
+    font: size 1.2rem;
+    font: weight 0.1rem;
+    cursor:pointer;
+}
+.bg_btn{
+    width: 200px;
+    background: var(--secondary);
+    border: 2px solid var(--secondary);
+    color: var(--tertiary);
+    border-radius:20px;
+    transistion:0.68s ease-out;
+}
+.bg_btn:hover{
+    background: transparent;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+}
+.border_btn{
+    width: 200px;
+    background: transparent;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+    border-radius:20px;
+    transistion:0.68s ease-out;
+}
+.border_btn:hover{
+    background: var(--secondary);
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+}
+/* Global Tag Section */
+.tag_section{
+    width:100%;
+    height:auto;
+    display:flex;
+    align-items:flex-start;
+    flex-direction:column;
+    margin-bottom: 1rem ;
+}
+.tag_center{
+    width:100%;
+    height:auto;
+    display:flex;
+    align-items:center;
+    justify-content: start;
+    flex-direction:column;
+    margin-bottom: 1rem ;
+}
+.tag_title{
+    font-size:1.7rem;
+    font-weight:500;
+    color:var(--primary);
+    letter-spacing:0.1rem;
+    margin-bottom:0rem ;
+}
+.tag_indicator{
+    display:flex;
+    align-items:center;
+    gap:0;
+}
+.line{
+    width: 90px;
+    height: 2px;
+    background:var(--secondary);
+}
+.circle{
+    width:6px;
+    height: 6px;
+    border-radius:50%;
+    background:var(--secondary);
+    margin-left: -0.2rem;
+    box-shadow:0px 0px 8px rgb(226, 72, 6, 12);
+}
+
+/* Main section */
+.main_section{
+    width:100%;
+    min-height:100vh;
+    background:var(--bg-color);
+    overflow-x:hidden;
+}
+/* Bg Image Styling */
+.bg_image_section{
+    width:100%;
+    height:100vh;
+    background:var(--linear-background), url() ,no-repeat;
+    background-position:center center;
+    background-size:cover;
+}
+/* Navbar Styling */
+.nav_section{
+    width:100%;
+    height: 75px;
+    background: rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(10.5px);
+    --webkit-backdrop-filter: blur(10.5px);
+    padding:10px 10px;
+    border-bottom: 1px solid rgba(65, 65, 65, 0.7);
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 999;
+}
+/* Logo Styling */
+.logo_link{
+    font-size:1.8rem;
+    font-weight:bold;
+    letter-spacing:0.01rem;
+    color:var(--tertiary);
+    line-height:50px;
+}
+.logo-link i{
+    font-size:1.0rem !important;
+    color:var(--secondary);
+    margin-left:-0.38rem;
+}
+.nav_section ul{
+    float:right;
+    line-height:50px;
+}
+.nav_section li{
+    display:inline-block;
+    font-size:1.2rem;
+    font-weight:500;
+    padding:0.8px;
+    letter-spacing:0.008rem;
+}
+.nav_section li a{
+    color:var(--fourth);
+    transistion:0.5s ease-out;
+}
+.nav_section li a:hover{
+    color: var(-secondary)
+}
+.nav_section li .active{
+    color:var(--secondary);
+}
+/* Toggle Icon Styling */
+#toggleIcon{
+    font-size:1.5rem;
+    color:var(--tertiary);
+    float:right;
+    line-height:3.5rem;
+    display:none;
+}
+/* Hero Styling */
+.hero_section{
+    width:100%;
+    height:100vh;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    row-gap:2rem;
+    flex-direction:column;
+}
+.text_section{
+    font-size:5rem;
+    font-weight:bold;
+    color:var(--tertiary);
+    line-height:7rem;
+    margin-bottom:1rem;
+    animation: slideLeftToRight 4s ease-out 1;
+}
+.text_section span{
+    font-size:5.5rem;
+    font-weight:bold;
+    color:var(--secondary);
+}
+.btn_group{
+    display:flex;
+    align-items:center;
+    column-gap:1.7rem;
+    animation: slideRightToLeft 4s ease-out 1;
+}
+/* Animation Section */
+/* Left To Right */
+@keyframes slideLeftToRight{
+    from{
+        transform: translateY(-100%);
+    } 
+    to{
+        transform: translateY(0);
+    }    
+}
+/* Rightt To Left */
+@keyframes slideLeftToRight{
+    from{
+        transform: translateX(-100%);
+    } 
+    to{
+        transform: translateX(0);
+    }    
+}
+/* About Section Styling*/
+.about_section{
+    position:relative;
+    width:100%;
+    height:auto;
+    padding: 100px 100px;
+    display:flex;
+    align-items: center;
+}
+.image-section{
+    width:54%;
+    height:auto;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.about_img{
+    width:100%;
+    height:70vh;
+    object-fit:cover;
+    object-position:center;
+}
+.content_section{
+    position:absolute;
+    width:50%;
+    height:auto;
+    background:var(--fourth);
+    border-radius:4px;
+    right: 100px;
+    display:flex;
+    align-items:flex-start;
+    jusify-content:start;
+    row-gap:1.1rem;
+    padding: 30px 30px 30px 160px;
+    box-shadow:5px 5px 10px rgba(68, 27, 5, 0.12);
+}
+.about_title{
+    font-size:1.9rem;
+    font-weight:600;
+    letter-spacing:0.1rem;
+    color:var(--primary);
+}
+.about_desc{
+    font-size:0.93rem;
+    line-height:1.2rem;
+    color:var(--primary);
+    margin-bottom:1.3rem;
+}
+.about_btn{
+    border-radius:4px !important;
+    margin-bottom:1.3rem;
+}
+/* Divider */
+.divider{
+    background:var(--fourth);
+}
+/* Travel Section Styling */
+.travel_categories_section{
+    position:relative;
+    width:100%;
+    height:auto;
+    padding:100px 100px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+}
+.desc{
+    font-size:1.1rem;
+    font-weight:500;
+    text-align:center;
+    color:var(--primary);
+    margin-bottom: 3rem;
+}
+.category_box_section{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3.5rem;
+}
+.category_box{
+    width: 400px;
+    height:auto;
+    background: var(--fourth);
+    border-radius:4px;
+    overflow:hidden;
+    cursor:pointer;
+    transistion: all 0.5s ease-out;
+}
+.category_box:hover{
+    box-shadow:2px 5px 15px rgba(0, 0, 0, 0.25);
+    transform: translateY(-15px);
+}
+.cat_img{
+    width: 100%;
+    height:40vh;
+    object-fit: cover;
+    object-position: center;
+}
+.cat_title{
+    font-size:1.5rem;
+    font-weight:600;
+    letter-spacing:0.1rem;
+    color:var(--primary);
+    padding:20px;
+    text-align:center;
+    transition:0.4s ease-out;
+}
+.category_box:hover .cat_title{
+    color:var(--secondary);
+}
+/* Join Community Section Styling */
+.join_section{
+    width:100%;
+    height:37vh;
+    background:var(--linear-background), url("./img/Azores5.jpeg") no-repeat;
+    background-position: center center;
+    background-size:cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    row-gap: 1.2rem;
+}
+.join_title{
+    font-size:2.3rem;
+    font-weight: 600;
+    letter-spacing:0.1rem;
+    color:var(--fourth);
+    text-align:center;
+    margin-bottom: 0rem;
+}
+/* Popular Destinations Section Styling*/
+.popular_destination{
+    width: 100px;
+    height:auto;
+    padding: 100px 100px;
+   display: flex;
+   align-items:center;
+   justify-content:center;
+   row-gap:1.2rem;
+   flex-direction: column;
+}
+.destination_section{
+    width: 100px;
+    height:auto;
+   display: flex;
+   align-items:center;
+   justify-content:center;
+   flex-wrap:wrap;
+   gap: 3rem;;
+}
+.destionation_box{
+    width: 630px;
+    height: auto;
+    border-radius:4px;
+    overflow:hidden;
+}
+.destination_img_box{
+    position:relative;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+}
+.destination_img{
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+    transistion: transform 0.5s ease-out;
+}
+.destination_img:hover{
+    transform: skew(-4deg) scale(1.1);
+}
+.destination_category{
+    position:absolute;
+    top:0;
+    background:var(--secondary);
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+    font-size:0.9rem;
+    color:var(--tertiary);
+}
+.destination_detail{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background:var(--linear-background-destination);
+    padding: 30px 25px 20px 25px;
+    font-size:0.9rem;
+    font-weight: 500;
+    color:var(--tertiary);
+    display:flex;
+    align-items:flex-start;
+    justify-content:end;
+    flex-direction:column;
+}
+.destination_title{
+    font-size:1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    color:var(--tertiary);
+}
+.destination_duration{
+    font-size: 0.89rem;
+    letter-spacing: 0.1rem;
+    font-weight: 500;
+    color:var(--fourth);
+    margin-bottom: 0.8rem;
+}
+.destination_popular_places{
+    width: 100%;
+    height:auto;
+    display: flex;
+    align-items: center;
+    column-gap:1rem;
+}
+.destination_popular_places .tag{
+    width: auto;
+    height: auto;
+    border-radius:20px;
+    font-size: 0.8rem;
+    background: var(--primary);
+    cursor: pointer;
+    transition:0.5s ease-out;
+}
+.destination_popular_places .tag:hover{
+    background: var(--secondary);
+}
+/* Blog Section Styling */
+.blog_section{
+    width: 100%;
+    height: auto;
+    padding: 60px 100px;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    row-gap:1.2rem;
+    flex-direction:column;
+}
+.blog_section_box{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:3.5rem;
+}
+.blog_box{
+    width: 400px;
+    height: auto;
+    border:1px solid rgba(65, 65, 65, 0.0);
+    border-radius:4px;
+    box-shadow:0px 0px 20px rgba(68, 27, 5, 0.12);
+    transistion:0.3s ease-out;
+}
+.blog_box:hover{
+    box-shadow:3px 4px 15px rgba(68, 27, 5, 0.42);
+}
+.blog_img{
+    width: 100%;
+    height:30vh;
+    object-fit:cover;
+    object-position:center;
+}
+.blog_data{
+    padding:15px 20px;
+}
+.date{
+    font-size:0.80rem;
+    color:var(--secondary);
+    margin-bottom: 0.7rem;
+}
+date i{
+    font-size:0.78re;
+}
+.blog_title{
+    font-size:1.3rem;
+    font-weight:600;
+    color:var(--primary);
+    margin-bottom: 0.4rem;
+}
+.blog_desc{
+    font-size: 0.89rem;
+    color:var(--fourth);
+    margin-bottom: 1.4rem;
+    line-height: 1.13rem;
+}
+.read_btn{
+    width: auto;
+    height: 40px;
+    border:none;
+    color:var(--secondary);
+    backhround:transparent;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.99rem;
+    cursor: pointer;
+    transition:transform 0.3s ease-out;
+}
+.read_btn i{
+    color:var(--secondary);
+    transform:transform 0.3s ease-out;
+}
+.read_btn{
+    transform: translateX(5px);
+}
+/* Contact Section Styling */
+.contact_section{
+    position: relative;
+    width: 100%;
+    height: auto;
+    background: rgba(0, 0, 0, 0.07);
+    padding: 60px 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.contact_box_section{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.map_section{
+    position: absolute;
+    width: 46%;
+    height: auto;
+    border-radius: 4px;
+    right: 100px;
+    background: var(--fourth);
+    display: flex;
+    align-items: flex-start;
+    justify-self: center;
+    flex-direction: column;
+    row-gap: 1.1rem;
+    padding: 35px 30px 35px 100px;
+    box-shadow: 5px 5px rgba(68, 27, 5, 0.12);
+    border: 2px solid rgba(143, 143, 143);
+}
+.form_section{
+    width: 100%;
+    height: auto;
+}
+.input_group{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1.4rem;
+    margin-bottom: 1.5rem;
+}
+.input_box{
+    width: 50%;
+}
+.form_section.label{
+    font-size: 1.23rem;
+    font-weight: 600;
+    color:var(--primary);
+    display:inline-block;
+    padding: 0.5rem;
+}
+.form_section input{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.message_box{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+.form_section{
+    width: 100%;
+    height: 35px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1rem;
+    font-weight: 500; 
+}
+.submit_btn{
+    border-radius: 4px !important;
+    
+}
+    </style> -->
+
+</head>
+<body>
+    <div class="main_section">
+        <div class="bg_image_section">
+            <!--Navbar Section--> 
+           <div class="nav_section">
+            <a href="./index.html" class="logo_link">
+                Travel <i class="fa-solid fa-video"></i>
+            </a>
+            <ul>
+                <li><a href="#" class="nav_link active">Home</a></li>
+                <li><a href="#" class="nav_link">About us</a></li>
+                <li><a href="#" class="nav_link">Top Destinations</a></li>
+                <li><a href="#" class="nav_link">Blogs</a></li>
+                <li><a href="#" class="nav_link">Contact us</a></li>
+            </ul>
+            <div id="toggleIcon">
+                  <i class="fa-solid fa-bars-staggered"></i> 
+            </div>
+           </div>
+           <!-- Hero section--> 
+           <div class="hero_section">
+            <div class="text_section">
+                Let's Explore the World, <br> <span>Together</span>
+            </div>
+            <div class="btn_group">
+                <button class="btn bg-btn">Explore More</button>
+                <button class="btn boreder-btn">Destination</button>
+            </div>
+           </div>
+        </div>
+            <!--About Us Section-->
+            <div class="about_section">
+                <div class="image_section" data-aos="flip-left">
+                    <img src="./tour.jpg" alt="About Image" class="about_img">
+                </div>
+                <div class="content_section" data-oas="flip-Right">
+                    <div class="tag_section">
+                        <h6 class="tag_title">About Us</h6>
+                        <div class="tag_indicator">
+                            <div class="line"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                    <h6 class="about_title">
+                        We Travel to Explore the World !
+                    </h6>
+                    <p class="about_desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni exercitationem enim necessitatibus sunt nam a, veniam provident unde ipsam voluptates voluptatibus odit quod blanditiis suscipit, eum earum reiciendis rem quia!
+                    </p>
+                    <button class="btn about_bt bg_btn">
+                       know more <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <hr class="divider">
+            <!--Travel category Section-->
+            <div class="travel_categories_section">
+                <div class="tag_section tag_center">
+                    <h6 class="tag_title">Our Journey</h6>
+                    <div class="tag_indicator">
+                        <div class="line"></div>
+                        <div class="circle"></div>
+                    </div>
+                </div>
+                <h6 class="desc">We travelled the following travel categories</h6>
+                <div class="category_box">
+                    <img src="./Azores8.jpeg" alt="Category Image" class="cat_img">
+                    <div class="cat_title">Adventure</div>
+                </div>
+                <div class="category_box">
+                    <img src="./Azores1.jpg" alt="Category Image" class="cat_img">
+                    <div class="cat_title">Adventure</div>
+                </div>
+                <div class="category_box">
+                    <img src="./Azores2.jpg" alt="Category Image" class="cat_img">
+                    <div class="cat_title">Adventure</div>
+                </div>
+                <div class="category_box">
+                    <img src="./Azores3.jpeg" alt="Category Image" class="cat_img">
+                    <div class="cat_title">Adventure</div>
+                </div>
+                <div class="category_box">
+                    <img src="./Azores5.jpeg" alt="Category Image" class="cat_img">
+                    <div class="cat_title">Adventure</div>
+                </div>
+                <div class="category_box">
+                    <img src="./Azores7.jpeg" alt="Category Image" class="cat_img">
+                    <div class="cat_title">Adventure</div>
+                </div>
+            </div>
+            <!--Join commuunity Section-->
+            <div class="join_section">
+               <h6 class="join_title">
+                    Join Our Travel Community <br> to Explore with Us.
+               </h6> 
+               <button class="bg_btn journey_btn">
+                Join Now <i class="fa-solid fa-arrow-right"></i>
+               </button>
+
+            </div>
+            <!--Suggested popular Destination Section-->
+            <div class="popular_destination">
+                <div class="tag_section tag_center">
+                    <h6 class="tag_title">Destinations</h6>
+                    <div class="tag_indicator">
+                        <div class="line"></div>
+                        <div class="circle"></div>
+                    </div>
+                </div>
+                <h6 class="desc">We suggest you to visit these popular destinations.</h6>
+                <div class="destination_section">
+                    <div class="destination_box">
+                        <div class="destination_img_box">
+                           <img src="./bird's eye view of islands.jpg" alt="Destination Image" class="destination_img">
+                           <div class="destination_category">
+                                Jungle Safari
+                           </div>
+                           <div class="destination_detail">
+                            <h6 class="destination_title">L-Tech Forest Resort Jungle</h6>
+                            <h6 class="destination_duration">
+                                12 days | (11th May - 23 May 2024)
+                            </h6>
+                            <div class="destination_popular_places">
+                                <div class="tag">River</div>
+                                <div class="tag">Nature</div>
+                                <div class="tag">Jungle</div>
+                            </div>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              <!-- Divider -->
+              <hr class="divider">
+            <!--Latest Blog Section-->
+            <div class="blog_section">
+                <div class="tag_section tag_center">
+                    <h6 class="tag_title">Our Blogs</h6>
+                    <div class="tag_indicator">
+                        <div class="line"></div>
+                        <div class="circle"></div>
+                    </div>
+                </div>
+                <h6 class="desc">Get Travel Guide & Experience via our Blogs.</h6>
+                <div class="blog_section_box">
+                    <div class="blog_box">
+                        <img src="./Azores6.jpeg" alt="Blog Image" class="blog_img">
+                        <div class="blog_data">
+                            <p class="date">
+                                <i class="fa-solid fa-calendar-days"></i> &nbsp; 23 April, 2024
+                            </p>
+                            <h6 class="blog_title">Explore the Jungle Safari</h6>
+                            <div class="blog_desc">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae quasi temporibus velit voluptatum. Vero ratione optio autem accusantium ab iusto repudiandae reiciendis magni sed beatae odio reprehenderit, suscipit incidunt aperium...
+                            </div>
+                            <button class="read_btn">
+                                Read more <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="blog_section_box">
+            <div class="blog_box">
+                <img src="./Azores5.jpeg" alt="Blog Image" class="blog_img">
+                <div class="blog_data">
+                    <p class="date">
+                        <i class="fa-solid fa-calendar-days"></i> &nbsp; 23 April, 2024
+                    </p>
+                    <h6 class="blog_title">Explore the Jungle Safari</h6>
+                    <div class="blog_desc">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae quasi temporibus velit voluptatum. Vero ratione optio autem accusantium ab iusto repudiandae reiciendis magni sed beatae odio reprehenderit, suscipit incidunt aperium...
+                    </div>
+                    <button class="read_btn">
+                        Read more <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blog_section_box">
+    <div class="blog_box">
+        <img src="./Azores2.jpg" alt="Blog Image" class="blog_img">
+        <div class="blog_data">
+            <p class="date">
+                <i class="fa-solid fa-calendar-days"></i> &nbsp; 23 April, 2024
+            </p>
+            <h6 class="blog_title">Explore the Jungle Safari</h6>
+            <div class="blog_desc">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae quasi temporibus velit voluptatum. Vero ratione optio autem accusantium ab iusto repudiandae reiciendis magni sed beatae odio reprehenderit, suscipit incidunt aperium...
+            </div>
+            <button class="read_btn">
+                Read more <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="blog_section_box">
+<div class="blog_box">
+    <img src="./Azores3.jpeg" alt="Blog Image" class="blog_img">
+    <div class="blog_data">
+        <p class="date">
+            <i class="fa-solid fa-calendar-days"></i> &nbsp; 23 April, 2024
+        </p>
+        <h6 class="blog_title">Explore the Jungle Safari</h6>
+        <div class="blog_desc">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae quasi temporibus velit voluptatum. Vero ratione optio autem accusantium ab iusto repudiandae reiciendis magni sed beatae odio reprehenderit, suscipit incidunt aperium...
+        </div>
+        <button class="read_btn">
+            Read more <i class="fa-solid fa-arrow-right"></i>
+        </button>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<div class="blog_section_box">
+<div class="blog_box">
+    <img src="./Azores4.jpeg" alt="Blog Image" class="blog_img">
+    <div class="blog_data">
+        <p class="date">
+            <i class="fa-solid fa-calendar-days"></i> &nbsp; 23 April, 2024
+        </p>
+        <h6 class="blog_title">Explore the Jungle Safari</h6>
+        <div class="blog_desc">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae quasi temporibus velit voluptatum. Vero ratione optio autem accusantium ab iusto repudiandae reiciendis magni sed beatae odio reprehenderit, suscipit incidunt aperium...
+        </div>
+        <button class="read_btn">
+            Read more <i class="fa-solid fa-arrow-right"></i>
+        </button>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<div class="blog_section_box">
+<div class="blog_box">
+    <img src="./Azores8.jpeg" alt="Blog Image" class="blog_img">
+    <div class="blog_data">
+        <p class="date">
+            <i class="fa-solid fa-calendar-days"></i> &nbsp; 23 April, 2024
+        </p>
+        <h6 class="blog_title">Explore the Jungle Safari</h6>
+        <div class="blog_desc">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae quasi temporibus velit voluptatum. Vero ratione optio autem accusantium ab iusto repudiandae reiciendis magni sed beatae odio reprehenderit, suscipit incidunt aperium...
+        </div>
+        <button class="read_btn">
+            Read more <i class="fa-solid fa-arrow-right"></i>
+        </button>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<div class="blog_section_box">
+<div class="blog_box">
+    <img src="./Azores7.jpeg" alt="Blog Image" class="blog_img">
+    <div class="blog_data">
+        <p class="date">
+            <i class="fa-solid fa-calendar-days"></i> &nbsp; 23 April, 2024
+        </p>
+        <h6 class="blog_title">Explore the Jungle Safari</h6>
+        <div class="blog_desc">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae quasi temporibus velit voluptatum. Vero ratione optio autem accusantium ab iusto repudiandae reiciendis magni sed beatae odio reprehenderit, suscipit incidunt aperium...
+        </div>
+        <button class="read_btn">
+            Read more <i class="fa-solid fa-arrow-right"></i>
+        </button>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+            <!--Contact Us Section--> 
+    <div class="contact_section">
+        <div class="tag_section tag_center">
+          <h6 class="tag_title">Get in Touch</h6>
+          <div class="tag_indicator">
+            <div class="line"></div>
+                <div class="circle"></div>
+          </div>
+        </div>
+        <h6 class="desc">Feel free to ask, if you have any query.</h6>
+        <div class="contact_box_section">
+            <div class="map_section">
+                <div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Phagwara,Punjab+(Travel%20Website)&amp;t=k&amp;z=9&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/population/">Population Estimator map</a></iframe></div>
+            <div class="form_section">
+                <form>
+                    <div class="input_group">
+                        <div class="input_box">
+                            <label for="firstname" class="label">firstname</label>
+                            <input type="text" class="input" placeholder="Enter your firstname">
+                        </div>
+                        <div class="input_box">
+                            <label for="lastname" class="label">lastname</label>
+                            <input type="text" class="input" placeholder="Enter your lastname">
+                        </div>
+                    </div>
+                    <div class="input_box">
+                        <label for="email" class="label">Email</label>
+                        <input type="email" class="input" placeholder="Enter your email">
+                    </div>
+                    <div class="input_box">
+                        <label for="subject" class="label">Subject</label>
+                        <input type="text" class="input" placeholder="e.g. Web Development">
+                    </div>
+                    <div class="message_box">
+                        <label for="project_desc" class="label">Project Description</label>
+                        <textarea name="project_desc" id="project_desc" cols="30" rows="6"
+                         placeholder="Please Clearly provide your description....." required=""</textarea>
+                    </div>
+                    <button class="btn bg_btn submit_btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Custom JAvaScript Link -->
+    <script src="./main.js"></script>
+
+    <!-- AOS JavaScript cdn link -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!--AOS Initialization -->
+    <script>
+        AOS.init();
+      </script>
+</body>
+</html>
